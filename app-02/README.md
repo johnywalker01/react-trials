@@ -9,7 +9,7 @@ order: 1
 
 This project is for understanding ReactJS's Routing & Nested Routing technique.
 
-Used capabities available in [react-router-dom](https://www.npmjs.com/package/react-router-dom) (version 6.x) and [react](https://www.npmjs.com/package/react) (version 17.x).
+Used features available in [react-router-dom](https://www.npmjs.com/package/react-router-dom) (version 6.x) and [react](https://www.npmjs.com/package/react) (version 17.x).
 
 This version contains
 - Configuring Routes
