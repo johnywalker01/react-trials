@@ -1,0 +1,8 @@
+{
+  "realm": "citsRealm",
+  "url": "http://localhost:8081/auth",
+  "ssl-required": "external",
+  "clientId": "wpApp",
+  "public-client": true,
+  "confidential-port": 0
+}

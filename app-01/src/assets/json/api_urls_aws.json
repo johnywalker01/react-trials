@@ -1,0 +1,6 @@
+{
+    "base_url": "http://quest-wp-demo-alb-1544771893.ap-northeast-1.elb.amazonaws.com:8081/",
+    "base_url_RUNTIME": "http://quest-wp-demo-alb-1544771893.ap-northeast-1.elb.amazonaws.com:8089/",
+    "BASE_URL_LAMBDA_API": "https://ts7sl648m8.execute-api.ap-northeast-1.amazonaws.com/prod/quest-api-lambda",
+    "BASE_URL_LAMBDA": "https://utvvkyvfqa.execute-api.ap-northeast-1.amazonaws.com/prod/quest-runtime-lambda"
+}

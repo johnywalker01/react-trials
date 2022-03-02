@@ -1,0 +1,5 @@
+{
+    "base_url": "http://localhost:9091/",
+    "base_url_RUNTIME": "http://localhost:8087/",
+    "BASE_URL_LAMBDA": "https://ts7sl648m8.execute-api.ap-northeast-1.amazonaws.com/prod/quest-api-lambda"
+}

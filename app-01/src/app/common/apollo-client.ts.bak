@@ -1,0 +1,146 @@
+/**
+ * NOT USING ANYMORE
+ */
+
+import { gql, ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApiUrlEnum } from 'app/enums/api-url.enum';
+import { setContext } from '@apollo/client/link/context';
+import { createHttpLink } from 'apollo-link-http';
+import { UserService } from 'app/services/user.service';
+
+export class WpApolloClient {
+  static CLIENT: any;
+  window1: any = window;
+  static GET_CLIENT = (): any => {
+    const httpLink: any = createHttpLink( {
+      uri: ApiUrlEnum.APOLLO_API_URL,
+    } );
+
+    const authLink = setContext( ( _, { headers } ) => {
+      // get the authentication token from user service or window.token
+      // return the headers to the context so httpLink can read them
+      const cb = () => {
+        const token = UserService.GetInstance().getToken();
+        return {
+          headers: {
+            ...headers,
+            Authorization: token ? `Bearer ${token}` : '',
+          },
+        };
+      };
+      return UserService.GetInstance().updateToken( cb );
+    } );
+
+    if ( !WpApolloClient.CLIENT ) {
+      WpApolloClient.CLIENT = new ApolloClient( {
+        link: authLink.concat( httpLink ),
+        cache: new InMemoryCache( {
+          // Merge function ; Used for data-fetch in Project-List, App-List, etc.
+          // typePolicies: {
+          //     ProjectOutput: {
+          //         // ProjectOutput has unique key as id
+          //         keyFields: ["id"],
+          //     },
+          // },
+        } ),
+      } );
+    }
+    return WpApolloClient.CLIENT;
+  };
+  static MUTATE_CREATE_SCREEN = gql`
+    mutation createUI($uiCreateInput: UICreateInput) {
+      createUI(uiCreateInput: $uiCreateInput) {
+        id
+        code
+        name
+      }
+    }
+  `;
+
+  static MUTATE_CREATE_APP = gql`
+    mutation createApp($appInput: AppInput) {
+      createApp(appInput: $appInput) {
+        id
+        appName
+        appCode
+      }
+    }
+  `;
+
+  static MUTATE_CREATE_PROJECT = gql`
+    mutation createProject($projectInput: ProjectInput) {
+      createProject(projectInput: $projectInput) {
+        id
+        wpAppName
+      }
+    }
+  `;
+
+  static MUTATE_DELETE_SCREEN = gql`
+    mutation delete_screen_definition($screenId: String!) {
+      deleteUiDef(id: $screenId)
+    }
+  `;
+  static MUTATE_DELETE_APP = gql`
+    mutation delete_app_definition($appId: String!) {
+      deleteAppDef(applicationID: $appId)
+    }
+  `;
+
+  static MUTATE_DELETE_PROJECT = gql`
+    mutation delete_project($projectID: String!){
+      deleteProject(projectID: $projectID)
+    }`;
+
+  static QUERY_GET_PROJECT_LIST = gql`
+    query projectList($customerID: String!) {
+      projectList(customerID: $customerID) {
+        id
+        wpAppName
+      }
+    }
+  `;
+
+  static QUERY_GET_SCREEN_LIST = gql`
+    query uiList($projectID: String!) {
+      uiList(projectID: $projectID) {
+        id
+        code
+        name
+      }
+    }
+  `;
+
+  static QUERY_GET_APP_LIST = gql`
+    query appList($wpApplicationID: String!) {
+      appList(wpApplicationID: $wpApplicationID) {
+        id
+        appCode
+        appName
+      }
+    }
+  `;
+  static QUERY_GET_APP_DETAILS = gql`
+    query getAppDetails($appId: String!) {
+      app(applicationID: $appId) {
+        id
+        appCode
+        appName
+        customerId
+        initialScreen
+        initialScreenParams
+        description
+        uiList
+        genMode
+        warType
+      }
+    }
+  `;
+  static SAVE_POPUP_DATA = gql`
+    mutation appUIMapping($applicationID: String, $uiList: [String]) {
+      appUIMapping(applicationID: $applicationID, uiList: $uiList) {
+        id
+      }
+    }
+  `;
+}
