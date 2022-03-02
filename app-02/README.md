@@ -1,25 +1,41 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Project Name}
+---
+title: Project Related
+order: 1
+---
+
+# Tutorial
+
+## Introduction
 
 This project is for understanding ReactJS's Routing & Nested Routing technique.
 Used capabities of react-router-dom, available in version 6.x and React version 17.x
 
+This version contains
+- Configuring Routes
+- Navigating with Link
+- Using Nested Routes for Layout
+- Navigating programmatically
+
 ## Installation
 
-### Setup
+### Using a bundler
 
+Used [Webpack bundler](https://webpack.js.org/concepts/).
+
+#### Install Project dependencies:
+
+```sh
+npm install
 ```
-$ npm install
-```
 
-## Usage
+Finally, start your app:
 
+```sh
+# probably this
+npm start
 
-### Running
-
-```
-$ npm start
+# or this
+npm run dev
 ```
 
 ### Build
@@ -28,27 +44,6 @@ $ npm start
 $ npm run build
 ```
 
-
-## Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
-## History
-
-TODO: Write history
-
-## Credits
-
-TODO: Write credits
-
 ## License
 
 MIT
-
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
