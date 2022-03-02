@@ -15,7 +15,7 @@ This version contains
 - Configuring Routes
 - Navigating with Link
 - Using Nested Routes for Layout
-- Navigating programmatically
+- Monaco Editor usage
 
 ## Installation
 
