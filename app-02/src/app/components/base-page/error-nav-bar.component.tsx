@@ -3,17 +3,14 @@ import React from 'react';
 import { NsBox } from './base-navigation.style';
 
 type FcProps = {
-    customProp?: any;
+  customProp?: any;
 };
 
 export const ErrorNavBar: React.FC<FcProps> = ( props ) => {
-
-    return (
-        <NsBox>
-            Some Error Occurred while rendering; Goto
-            <Link href="/" underline="hover">
-                Home
-            </Link>
-        </NsBox>
-    );
+  return (
+    <NsBox>
+      Some Error Occurred while rendering; Goto
+      <Link href="/" underline="hover">Home</Link>
+    </NsBox>
+  );
 };

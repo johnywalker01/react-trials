@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Outlet, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { BaseNavigation } from './components/base-page/base-navigation.component';
 import { ErrorNavBar } from './components/base-page/error-nav-bar.component';
 import { Dummy } from './components/dummy.component';
@@ -15,10 +15,9 @@ type FcProps = {
 };
 
 export const App: React.FC<FcProps> = ( props ) => {
-
   return (
     <>
-      <ErrorBoundary fallBack={ <><ErrorNavBar /> </> }>
+      <ErrorBoundary fallBack={ <ErrorNavBar /> }>
         <BrowserRouter>
           <BaseNavigation />
 
@@ -35,4 +34,4 @@ export const App: React.FC<FcProps> = ( props ) => {
       </ErrorBoundary>
     </>
   );
-}
+};

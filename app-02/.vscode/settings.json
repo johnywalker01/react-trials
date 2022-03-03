@@ -1,8 +1,0 @@
-{
-    "editor.formatOnSave": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
-    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
-    "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true
-}
