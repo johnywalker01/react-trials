@@ -7,8 +7,10 @@ import { MyEditor } from './components/editor.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import { Home } from './components/home.component';
 import { Shelf } from './components/shelf.component';
+import { BarComp } from './components/bar.component';
 import { Topic } from './components/topic.component';
 import { Topics } from './components/topics.component';
+import { ButtonsComp } from './components/buttons.component';
 
 type FcProps = {
   customProp?: any;
@@ -28,6 +30,8 @@ export const App: React.FC<FcProps> = ( props ) => {
             </Route>
             <Route path="/shelf" element={ <Shelf /> } />
             <Route path="/editor" element={ <MyEditor /> } />
+            <Route path="/bar" element={ <BarComp /> } />
+            <Route path="/button" element={ <ButtonsComp /> } />
             <Route path="*" element={ Dummy } />
           </Routes>
         </BrowserRouter>
