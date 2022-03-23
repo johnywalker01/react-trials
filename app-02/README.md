@@ -16,6 +16,7 @@ This version contains
 - Navigating with Link
 - Using Nested Routes for Layout
 - Monaco Editor usage
+- Usage of MUI [v5](https://mui.com/getting-started/installation/)
 
 ## Installation
 

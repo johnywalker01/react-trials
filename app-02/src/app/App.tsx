@@ -10,7 +10,8 @@ import { Shelf } from './components/shelf.component';
 import { BarComp } from './components/bar.component';
 import { Topic } from './components/topic.component';
 import { Topics } from './components/topics.component';
-import { ButtonsComp } from './components/buttons.component';
+import { CustomMuiControls } from './components/custom-mui-controls.component';
+import { RouteLink } from './datatypes/common';
 
 type FcProps = {
   customProp?: any;
@@ -24,15 +25,15 @@ export const App: React.FC<FcProps> = ( props ) => {
           <BaseNavigation />
 
           <Routes>
-            <Route path="/" element={ <Home /> } />
-            <Route path="topics/*" element={ <Topics /> } >
-              <Route path=":topicId" element={ <Topic /> } />
+            <Route path={ RouteLink.root } element={ <Home /> } />
+            <Route path={ RouteLink.topics + RouteLink.nested } element={ <Topics /> } >
+              <Route path={ RouteLink.topicId } element={ <Topic /> } />
             </Route>
-            <Route path="/shelf" element={ <Shelf /> } />
-            <Route path="/editor" element={ <MyEditor /> } />
-            <Route path="/bar" element={ <BarComp /> } />
-            <Route path="/button" element={ <ButtonsComp /> } />
-            <Route path="*" element={ Dummy } />
+            <Route path={ RouteLink.shelf } element={ <Shelf /> } />
+            <Route path={ RouteLink.editor } element={ <MyEditor /> } />
+            <Route path={ RouteLink.bar } element={ <BarComp /> } />
+            <Route path={ RouteLink.fancy } element={ <CustomMuiControls /> } />
+            <Route path={ RouteLink.empty } element={ Dummy } />
           </Routes>
         </BrowserRouter>
       </ErrorBoundary>

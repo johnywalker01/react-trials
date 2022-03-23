@@ -1,3 +1,4 @@
+import { RouteLink } from 'app/datatypes/common';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NsBox } from './base-navigation.style';
@@ -7,12 +8,12 @@ type FcProps = {
 };
 
 const LINKS = [
-  { id: 'home', href: '/', name: 'Home' },
-  { id: 'topics', href: '/topics', name: 'Topics' },
-  { id: 'shelf', href: '/shelf', name: 'Shelf' },
-  { id: 'editor', href: '/editor', name: 'Editor' },
-  { id: 'bar', href: '/bar', name: 'Barista' },
-  { id: 'button', href: '/button', name: 'Fancy Buttons' },
+  { id: 'home', href: RouteLink.root, name: 'Home' },
+  { id: 'topics', href: RouteLink.topics, name: 'Topics' },
+  { id: 'shelf', href: RouteLink.shelf, name: 'Shelf' },
+  { id: 'editor', href: RouteLink.editor, name: 'Editor' },
+  { id: 'bar', href: RouteLink.bar, name: 'Barista' },
+  { id: 'customStyles', href: RouteLink.fancy, name: 'Custom Styles' },
 ];
 
 export const BaseNavigation: React.FC<FcProps> = ( props ) => {

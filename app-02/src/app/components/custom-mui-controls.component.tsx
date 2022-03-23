@@ -1,21 +1,19 @@
-import { Box, Button, Fade } from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
-import LinearProgress from '@mui/material/LinearProgress';
-import { green } from '@mui/material/colors';
-import React, { useState } from 'react';
+import { Box } from '@mui/material';
+import React from 'react';
+import { DynamicCSSVariables } from './custom-slider/fancy-bar.component';
 import { FancyButton } from './fancy-buttons/fancy-button.component';
 
 type FcProps = {
   customProp?: any;
 };
 
-export const ButtonsComp: React.FC<FcProps> = ( props ) => {
+export const CustomMuiControls: React.FC<FcProps> = ( props ) => {
 
 
   return (
     <div style={ { display: 'flex', flexDirection: 'column' } }>
       <div>
-        <h1>Fancy Buttons</h1>
+        <h1>Custom MUI components</h1>
       </div>
 
       <Box sx={ { m: 1 } }>
@@ -23,6 +21,9 @@ export const ButtonsComp: React.FC<FcProps> = ( props ) => {
         <FancyButton label='Accept Terms' variant='outlined' />
         <FancyButton label='Accept Terms' variant='text' />
 
+      </Box>
+      <Box sx={ { m: 1 } }>
+        <DynamicCSSVariables />
       </Box>
 
     </div>
