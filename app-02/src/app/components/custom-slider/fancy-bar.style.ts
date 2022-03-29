@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import LinearProgress from '@mui/material/LinearProgress';
-import { blue, green } from '@mui/material/colors';
+import { indigo, green } from '@mui/material/colors';
 
 export const FancyLinearProgress = styled( LinearProgress )( {
     '&': {
@@ -18,6 +18,6 @@ export const successVars = {
 } as React.CSSProperties;
 
 export const defaultVars = {
-    '--bgColor': blue[500],
-    '--bgColorBase': blue[100],
+    '--bgColor': indigo[500],
+    '--bgColorBase': indigo[100],
 } as React.CSSProperties;

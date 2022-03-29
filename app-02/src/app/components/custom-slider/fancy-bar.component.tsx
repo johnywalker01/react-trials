@@ -32,6 +32,7 @@ export const DynamicCSSVariables: React.FC<FcProps> = ( props ) => {
 
   return (
     <>
+      <span>Implementation of customization of progress bar (Do Swtich to trigger) </span>
       <FormControlLabel
         control={
           <Switch
