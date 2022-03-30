@@ -8,6 +8,7 @@ import { Dummy } from './components/dummy.component';
 import { MyEditor } from './components/editor.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import { Home } from './components/home.component';
+import { WorkShop } from './components/learn-reducer/workshop.component';
 import { Shelf } from './components/shelf.component';
 import { Topic } from './components/topic.component';
 import { Topics } from './components/topics.component';
@@ -33,6 +34,7 @@ export const App: React.FC<FcProps> = ( props ) => {
             <Route path={ RouteLink.editor } element={ <MyEditor /> } />
             <Route path={ RouteLink.bar } element={ <BarComp /> } />
             <Route path={ RouteLink.fancy } element={ <CustomMuiControls /> } />
+            <Route path={ RouteLink.workShop } element={ <WorkShop /> } />
 
             {/* "No Match" Route */ }
             <Route path={ RouteLink.empty } element={ Dummy } />

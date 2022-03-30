@@ -14,6 +14,7 @@ const LINKS = [
   { id: 'editor', href: RouteLink.editor, name: 'Editor' },
   { id: 'bar', href: RouteLink.bar, name: 'Barista' },
   { id: 'customStyles', href: RouteLink.fancy, name: 'Custom Styles' },
+  { id: 'workShop1', href: RouteLink.workShop, name: 'Work' },
 ];
 
 export const BaseNavigation: React.FC<FcProps> = ( props ) => {
