@@ -1,8 +1,11 @@
-import { Box, Button, Fade } from '@mui/material';
+import { Box, Button, Fade, SelectChangeEvent } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
-import LinearProgress from '@mui/material/LinearProgress';
 import { green } from '@mui/material/colors';
+import { getAxiosData } from 'app/api/axios-client';
+import { DataModel, IData } from 'app/datatypes/common';
+import { AxiosResponse } from 'axios';
 import React, { useState } from 'react';
+import { NodeFetch } from './nodejs-fetch.component';
 
 type FcProps = {
   customProp?: any;
@@ -11,9 +14,10 @@ type FcProps = {
 const fetchUrl = 'https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json';
 
 export const BarComp: React.FC<FcProps> = ( props ) => {
-  const [loading, setLoading] = React.useState( false );
   const [checked, setChecked] = React.useState( false );
   const [users, setUsers] = useState<string[]>( [] );
+  const [items, setItems] = useState<IData[]>( [] );
+  const [color, setColor] = React.useState( '' );
 
   const handleAction = () => {
     fetchData( fetchUrl )
@@ -50,12 +54,51 @@ export const BarComp: React.FC<FcProps> = ( props ) => {
     }
   }
 
-  const handleButtonClick = () => {
-    setLoading( ( prev ) => !prev );
-    setTimeout( () => {
-      setLoading( ( prev ) => !prev );
-    }, 2000 );
+  const handleButtonClick = async () => {
+    getData();
   }
+
+  const getData = ( type?: string ) => {
+    let data = {};
+    if ( type ) {
+
+      data = { ...data, 'color': type };
+    }
+
+    getAxiosData( 'ingredients', data )
+      .then( function ( response ) {
+        // handle success
+        // console.log( response );
+        processResponse( response );
+      } )
+      .catch( function ( error ) {
+        // handle error
+        console.log( error );
+      } );
+  }
+
+  const processResponse = ( response: AxiosResponse<any> ) => {
+    if ( response.data?.results?.data ) {
+      let groceries: IData[] = [];
+      const itemList = response.data?.results?.data;
+      for ( const item of itemList ) {
+        // console.log( item );
+        let ima = new DataModel();
+        ima.setValues( item );
+
+        groceries.push( ima );
+      }
+      setItems( groceries );
+    }
+  }
+
+  const handleFetch = async () => {
+    getData( color );
+  }
+
+  const handleChange = ( event: SelectChangeEvent ) => {
+    setColor( event.target.value );
+  };
 
 
   const icon = (
@@ -88,6 +131,7 @@ export const BarComp: React.FC<FcProps> = ( props ) => {
           </span>
         ) ) }
       </div>
+      <NodeFetch />
     </div>
   );
 };

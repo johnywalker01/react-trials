@@ -27,3 +27,20 @@ export interface IDispatch {
     name: string;
     complete: boolean;
 }
+
+export interface IData {
+    id: string;
+    item: string;
+}
+export class DataModel implements IData {
+    id: string = '';
+    item: string = '';
+
+    setValues( obj: any ) {
+        if ( !obj ) return;
+
+        if ( obj?.id ) this.id = obj.id;
+        if ( obj?.item ) this.item = obj.item;
+    }
+
+}
