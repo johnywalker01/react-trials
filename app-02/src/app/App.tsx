@@ -8,11 +8,13 @@ import { Dummy } from './components/dummy.component';
 import { MyEditor } from './components/editor.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import { Home } from './components/home.component';
+import { MultiLingual } from './components/language/language.component';
 import { WorkShop } from './components/learn-reducer/workshop.component';
 import { Shelf } from './components/shelf.component';
 import { Topic } from './components/topic.component';
 import { Topics } from './components/topics.component';
 import { RouteLink } from './datatypes/common';
+import '../i18n/i18n';
 
 type FcProps = {
   customProp?: any;
@@ -35,6 +37,7 @@ export const App: React.FC<FcProps> = ( props ) => {
             <Route path={ RouteLink.bar } element={ <BarComp /> } />
             <Route path={ RouteLink.fancy } element={ <CustomMuiControls /> } />
             <Route path={ RouteLink.workShop } element={ <WorkShop /> } />
+            <Route path={ RouteLink.i18n } element={ <MultiLingual /> } />
 
             {/* "No Match" Route */ }
             <Route path={ RouteLink.empty } element={ Dummy } />

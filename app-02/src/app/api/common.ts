@@ -1,3 +1,5 @@
+import LANGUAGE_JSON from 'src/i18n/locales/translation-en.json';
+
 const data: any[] = [
   {
     id: 'typescript',
@@ -24,8 +26,13 @@ const data: any[] = [
 export const getTopics = () => {
   return data;
 };
+
 export const getTopic = ( topicId: string ) => {
   if ( !topicId ) return data[0];
 
-  return data.find( (item) => item.id == topicId );
+  return data.find( ( item ) => item.id == topicId );
 };
+
+export const getLangKey = () => {
+  return Object.keys( LANGUAGE_JSON );
+}
