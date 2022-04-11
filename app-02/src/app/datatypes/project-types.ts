@@ -8,6 +8,7 @@ export const RouteLink = {
     fancy: '/fancy',
     workShop: '/workShop',
     i18n: '/i18n',
+    table: '/table',
     bar: '/bar',
     editor: '/editor',
 }

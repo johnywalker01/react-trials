@@ -36,3 +36,13 @@ export const getTopic = ( topicId: string ) => {
 export const getLangKey = () => {
   return Object.keys( LANGUAGE_JSON );
 }
+
+export const getTimeSinceEpochUTC = ( isMilli: boolean = false ): number => {
+  const now = new Date();
+
+  return ( isMilli )
+    ?
+    now.getTime() + ( now.getTimezoneOffset() * 60 * 1000 )
+    :
+    Math.round( now.getTime() + ( now.getTimezoneOffset() * 60 * 1000 ) / 1000 );
+}

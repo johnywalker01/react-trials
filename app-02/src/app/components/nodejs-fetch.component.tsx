@@ -1,6 +1,6 @@
 import { Box, Button, Divider, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Stack } from '@mui/material';
 import { getAxiosData } from 'app/api/axios-client';
-import { DataModel, IData } from 'app/datatypes/common';
+import { DataModel, IData } from 'app/datatypes/project-types';
 import { AxiosResponse } from 'axios';
 import React, { useState } from 'react';
 

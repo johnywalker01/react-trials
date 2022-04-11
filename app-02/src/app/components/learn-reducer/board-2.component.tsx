@@ -1,5 +1,5 @@
 import { Box, Button, Divider, Stack, TextField } from '@mui/material';
-import { ACTIONS, dispatchType, IDispatch } from 'app/datatypes/common';
+import { ACTIONS, dispatchType, IDispatch } from 'app/datatypes/project-types';
 import React, { useReducer, useState } from 'react';
 import { Todo } from './todo.component';
 

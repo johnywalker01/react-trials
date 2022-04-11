@@ -13,8 +13,9 @@ import { WorkShop } from './components/learn-reducer/workshop.component';
 import { Shelf } from './components/shelf.component';
 import { Topic } from './components/topic.component';
 import { Topics } from './components/topics.component';
-import { RouteLink } from './datatypes/common';
+import { RouteLink } from './datatypes/project-types';
 import '../i18n/i18n';
+import { MuiTable } from './components/mui-table/mui-table.component';
 
 type FcProps = {
   customProp?: any;
@@ -38,6 +39,7 @@ export const App: React.FC<FcProps> = ( props ) => {
             <Route path={ RouteLink.fancy } element={ <CustomMuiControls /> } />
             <Route path={ RouteLink.workShop } element={ <WorkShop /> } />
             <Route path={ RouteLink.i18n } element={ <MultiLingual /> } />
+            <Route path={ RouteLink.table } element={ <MuiTable /> } />
 
             {/* "No Match" Route */ }
             <Route path={ RouteLink.empty } element={ Dummy } />

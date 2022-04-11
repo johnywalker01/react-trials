@@ -1,5 +1,5 @@
 import { Button, Stack } from '@mui/material';
-import { ACTIONS, dispatchType } from 'app/datatypes/common';
+import { ACTIONS, dispatchType } from 'app/datatypes/project-types';
 import React from 'react';
 
 

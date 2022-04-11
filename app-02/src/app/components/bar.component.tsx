@@ -2,7 +2,7 @@ import { Box, Button, Fade, SelectChangeEvent } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import { green } from '@mui/material/colors';
 import { getAxiosData } from 'app/api/axios-client';
-import { DataModel, IData } from 'app/datatypes/common';
+import { DataModel, IData } from 'app/datatypes/project-types';
 import { AxiosResponse } from 'axios';
 import React, { useState } from 'react';
 import { NodeFetch } from './nodejs-fetch.component';
