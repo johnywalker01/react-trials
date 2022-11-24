@@ -6,11 +6,13 @@ type FcProps = {
   customProp?: any;
 };
 
-export const ErrorNavBar: React.FC<FcProps> = ( props ) => {
+export const ErrorNavBar: React.FC<FcProps> = (props) => {
   return (
     <NsBox>
       Some Error Occurred while rendering; Goto
-      <Link href="/" underline="hover">Home</Link>
+      <Link href="/" underline="hover">
+        Home
+      </Link>
     </NsBox>
   );
 };

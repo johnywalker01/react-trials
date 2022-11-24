@@ -7,25 +7,21 @@ type FcProps = {
   customProp?: any;
 };
 
-export const CustomMuiControls: React.FC<FcProps> = ( props ) => {
-
-
+export const CustomMuiControls: React.FC<FcProps> = (props) => {
   return (
-    <div style={ { display: 'flex', flexDirection: 'column' } }>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div>
         <h1>Custom MUI components</h1>
       </div>
 
-      <Box sx={ { m: 1 } }>
-        <FancyButton label='Accept Terms' />
-        <FancyButton label='Accept Terms' variant='outlined' />
-        <FancyButton label='Accept Terms' variant='text' />
-
+      <Box sx={{ m: 1 }}>
+        <FancyButton label="Accept Terms" />
+        <FancyButton label="Accept Terms" variant="outlined" />
+        <FancyButton label="Accept Terms" variant="text" />
       </Box>
-      <Box sx={ { m: 1 } }>
+      <Box sx={{ m: 1 }}>
         <DynamicCSSVariables />
       </Box>
-
     </div>
   );
 };

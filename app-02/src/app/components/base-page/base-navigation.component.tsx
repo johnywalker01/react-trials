@@ -17,18 +17,19 @@ const LINKS = [
   { id: 'workShop1', href: RouteLink.workShop, name: 'Work' },
   { id: 'internationalized', href: RouteLink.i18n, name: 'Internationalization' },
   { id: 'table', href: RouteLink.table, name: 'Table' },
+  { id: 'fancy2', href: RouteLink.fancy2, name: 'Fancy-2' },
 ];
 
-export const BaseNavigation: React.FC<FcProps> = ( props ) => {
+export const BaseNavigation: React.FC<FcProps> = (props) => {
   // const preventDefault = ( event: React.SyntheticEvent ) => event.preventDefault();
 
   return (
     <NsBox>
-      {
-        LINKS.map( ( link, index ) => (
-          <Link key={ link.id + index } to={ link.href }>{ link.name }</Link>
-        ) )
-      }
+      {LINKS.map((link, index) => (
+        <Link key={link.id + index} to={link.href}>
+          {link.name}
+        </Link>
+      ))}
     </NsBox>
   );
 };
