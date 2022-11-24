@@ -18,6 +18,7 @@ const LINKS = [
   { id: 'internationalized', href: RouteLink.i18n, name: 'Internationalization' },
   { id: 'table', href: RouteLink.table, name: 'Table' },
   { id: 'fancy2', href: RouteLink.fancy2, name: 'Fancy-2' },
+  { id: 'fancy3', href: RouteLink.fancy3, name: 'Fancy-3' },
 ];
 
 export const BaseNavigation: React.FC<FcProps> = (props) => {

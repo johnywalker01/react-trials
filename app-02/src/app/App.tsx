@@ -19,6 +19,7 @@ import { Topics } from './components/topics.component';
 import { RouteLink } from './datatypes/project-types';
 import { MuiTable } from './components/mui-table/mui-table.component';
 import { Fancy2 } from './components/fancy-2.component';
+import { Fancy3 } from './components/fancy-3.component';
 
 type FcProps = {
   customProp?: any;
@@ -44,6 +45,7 @@ export const App: React.FC<FcProps> = (props) => {
             <Route path={RouteLink.i18n} element={<MultiLingual />} />
             <Route path={RouteLink.table} element={<MuiTable />} />
             <Route path={RouteLink.fancy2} element={<Fancy2 />} />
+            <Route path={RouteLink.fancy3} element={<Fancy3 />} />
 
             {/* "No Match" Route */}
             <Route path={RouteLink.empty} element={Dummy} />
